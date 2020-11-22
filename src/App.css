@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+.container {
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+
+}
 
 nav {
   background-color: #282c34;

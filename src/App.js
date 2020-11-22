@@ -10,8 +10,15 @@ import {
     Link,
     Redirect
 } from "react-router-dom";
+import SlideShow from "./components/SlideShow";
+
+
 
 function App() {
+    const person = {
+        firstname: "Iva",
+        lastname: "Markovic"
+    };
     return (
         <Router>
             <div>
@@ -19,17 +26,21 @@ function App() {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/wetter">Wetter</Link></li>
+                        <li><Link to="/slide">Slideshow</Link></li>
                     </ul>
                 </nav>
                 <Switch>
                     <Route exact path="/">
-                        <Home/>
+                        <Home text="Das ist mein Text" person={person}/>
                     </Route>
                     <Route path="/wetter">
                         <Wetter/>
                     </Route>
+                    <Route path="/slide">
+                        <SlideShow/>
+                    </Route>
                     <Route path="/default">
-                        <Default/>
+                        <Default message="Route existiert nicht"/>
                     </Route>
                     <Redirect to="/default"/>
                 </Switch>
